@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>
+<html class="ie ie9" lang="en">
+<![endif]-->
+<html lang="en-US">
+<head>
+<script>
+        dataLayer = [];
+    </script>
+<meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>Login - LectureNotes.in</title>
+<meta name="description" content=" Classroom notes, Engineering exam notes, previous year questions for Engineering, PDF free download" />
+<meta name="keywords" content=",notes, elearning, university notes, exam notes, class notes, pdf free download" />
+<link rel="stylesheet" href="/css/d636602-b34e553.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=3, user-scalable=yes" />
+<meta name="theme-color" content="#005b7f" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/manifest.json">
+<link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/img/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/assets/img/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="/assets/img/icons/browserconfig.xml">
+<meta name="author" content="LectureNotes.in" />
+<meta name="Copyright" content="Lecturenotes.in" />
+<meta property="fb:admins" content="Agrl.ayush" />
+<meta property="fb:app_id" content="1585649735038149" />
+<meta property="og:title" content="Login - LectureNotes.in - LectureNotes.in" />
+<link href="https://plus.google.com/113013898071634021131" rel="publisher" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://lecturenotes.in/account/login" />
+<meta property="og:image" content="/assets/img/logo.jpg" />
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Noto+Sans" as="style" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Rajdhani" as="style" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani" /></noscript>
+<!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<script>
+    !function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function a(){d.addEventListener&&d.removeEventListener("load",a),d.media=r||"all"}var l,i=e.document,d=i.createElement("link");if(n)l=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;l=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){l.parentNode.insertBefore(d,n?l:l.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",a),d.onloadcssdefined=f,f(a),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(t){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
+    </script>
+
+<script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5MLV8L');
+    </script>
+
+</head>
+<body>
+
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MLV8L" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<noscript>
+    <div id="noscript-warning">LectureNotes.in works best with JavaScript enabled</div>
+    <div style="position:relative;height:20px;"></div>
+</noscript>
+<header>
+<div class="container">
+<div class="row">
+<div class="mobnav-btn"></div>
+<div class="col-md-3 col-sm-3 col-xs-3">
+<a href="/" id="logo">LectureNotes.in</a>
+</div>
+<div class="col-md-9 col-sm-9 col-xs-9" style="margin-top: 3px;">
+<div class="pull-right" style="margin-top: 5px;">
+<a href="/upload" class="header-upload-small-btn"><i class="icon-upload"></i></a>
+</div>
+<div class="pull-right">
+<a href="/upload" class="button_top top-head-btn header-upload-btn"><i class="icon-upload"></i>Upload</a>
+</div>
+<div class="header-search-and-user">
+<div class="pull-right header-search">
+<form class="form ln-search header-search-form" action="/search" method="get" id="header-search-form" autocomplete="off">
+<input type="text" class="search-box tooltip-1" placeholder="Search" name="q" data-placement="bottom" title="Enter at least 3 characters. Use full names for better results!" />
+<button id="top-search-btn" type="submit" class="search-box-submit pull-right"><i class="icon-search"></i></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="header-gap"></div>
+<nav class="ln-navbar" id="superfish-big" role="navigation">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+
+<div class="sf-dad"></div>
+<div class="sf-menu-container">
+<div id="sidebar_user" class="hidden-lg hidden-md hidden-sm dropdown">
+<a href="/account/register/" class="button_top signup_button">Sign
+Up</a>
+<a href="/account/login" class="button_top login_button">Sign In</a>
+</div>
+<ul class="sf-menu">
+<li class="normal_drop_down">
+<a href="/">Home</a>
+</li>
+<li class="normal_drop_down">
+<a>Branch</a>
+<div class="mobnav-subarrow"></div>
+<ul>
+<li>
+<a href="/course/all/btech/electrical-engineering" class="tooltip-1" data-placement="right" title="Electrical Engineering">EE</a>
+</li>
+<li>
+<a href="/course/all/btech/computer-science-engineering" class="tooltip-1" data-placement="right" title="Computer Science Engineering">CSE</a>
+</li>
+<li>
+<a href="/course/all/btech/applied-electronics-and-instrumentation-engineering" class="tooltip-1" data-placement="right" title="Applied Electronics and Instrumentation Engineering">AEI</a>
+</li>
+<li>
+<a href="/course/all/btech/information-technology-engineering" class="tooltip-1" data-placement="right" title="Information Technology Engineering">IT</a>
+</li>
+<li>
+<a href="/course/all/btech/electronics-and-telecommunication-engineering" class="tooltip-1" data-placement="right" title="Electronics and Communication Engineering">ETC</a>
+</li>
+<li>
+<a href="/course/all/btech/electrical-and-electronics-engineering" class="tooltip-1" data-placement="right" title="Electrical and Electronics Engineering">EEE</a>
+</li>
+<li>
+<a href="/course/all/mca/master-of-computer-application" class="tooltip-1" data-placement="right" title="Master of Computer Applications">MCA</a>
+</li>
+<li>
+<a href="/course/all/btech/civil-engineering" class="tooltip-1" data-placement="right" title="Civil Engineering">CIVIL</a>
+</li>
+<li>
+<a href="/course/all/btech/mechanical-engineering" class="tooltip-1" data-placement="right" title="Mechanical Engineering">MECH</a>
+</li>
+<li>
+<a href="/course/all/btech/12-chemical-chemical-engineering" class="tooltip-1" data-placement="right" title="Chemical Engineering">CHEM</a>
+</li>
+</ul>
+</li>
+<li><a href="/upload">Upload Your Material</a></li>
+<li><a href="/video-tutorials">Video Tutorials <span class="label label-warning">NEW</span></a></li>
+<li><a href="/contact-us">Contact Us</a></li>
+</ul>
+<div class="nav-search-and-user">
+<div class="pull-right header-search">
+<form class="form ln-search header-search-form" action="/search" method="get" id="header-search-form" autocomplete="off">
+<input type="text" class="search-box tooltip-1" placeholder="Search" name="q" data-placement="bottom" title="Enter at least 3 characters. Use full names for better results!" />
+<button id="top-search-btn" type="submit" class="search-box-submit pull-right"><i class="icon-search"></i></button>
+</form>
+</div>
+<div class="pull-right hidden-login-sm">
+<a href="/account/register/" class="button_top signup_button">Sign
+Up</a>
+<a href="/account/login" class="button_top login_button">Login</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<section id="login_bg">
+<div class="container">
+<div class="row">
+<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+<div id="login">
+<p class="text-center">
+<img src="/assets/img/login_logo.png" alt="LectureNotes.in Logo">
+</p>
+<hr>
+<div class="text-center">
+<h4 style="margin-bottom: 5px;">Login or Signup </h4>(It's absolutely free and takes less than 30 seconds)
+</div>
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-6 login_social">
+<a href="/account/oauth_login/facebook_login?redirect_url=/dashboard" class="btn btn-primary btn-block">
+<i class="icon-facebook"></i> Facebook </a>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-6 login_social">
+<a href="/account/oauth_login/google_login?redirect_url=/dashboard" class="btn btn-danger btn-block "><i class="icon-google"></i> Google</a>
+</div>
+</div> 
+<div class="login-or">
+<hr class="hr-or">
+<span class="span-or" style="width: 120px; left: calc(50% - 35px);">Or with Email</span>
+</div>
+<form action="/account/login" method="post" class="login-form">
+<input type="hidden" name="_csrf_token" value="2XKcMqZKC4oo3vhX2pJpo311iCXm6XrUFJNLzRz_qAQ" />
+<div class="form-group">
+<input type="text" id="username" name="_username" class=" form-control username" placeholder="Username or Email" value="">
+<span class="input-icon"><i class=" icon-user"></i></span>
+</div>
+<div class="form-group" style="margin-bottom:5px;">
+<input type="password" id="password" name="_password" class=" form-control password" placeholder="Password" style="margin-bottom:5px;">
+<span class="input-icon"><i class="icon-lock"></i></span>
+</div>
+<div class="form-group">
+<input type="checkbox" class="remember_me" name="_remember_me" id="remember_me" checked>
+<label for="remember_me">Remember me</label>
+</div>
+<input type="hidden" name="redirect_url" value="/dashboard" />
+<p class="small">
+<a href="/account/reset-password/">Forgot Password?</a>
+</p>
+<input type="hidden" name="_token" value="9jKcBWUk1XrNndzF5cOYClPweWLm2-k8vNKVML7FlAY">
+<button type="submit" class="button_fullwidth" id="login-submission">Log in</button>
+<a href="/account/register/" class="button_fullwidth-2 ">Join (Register)</a>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section> 
+<footer>
+<div class="container" id="nav-footer">
+<div class="row text-left">
+<div class="col-md-3 col-sm-3">
+<ul>
+<li><a href=/the-team>Meet the Team</a></li>
+<li><a href=/aboutus>About us</a></li>
+<li><a href=/our-mission>Our Mission</a></li>
+<li><a href=/advertise-with-us>Advertise with Us</a></li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-3">
+<ul>
+<li><a href="/contact-us">Contact Us</a></li>
+<li><a href="/report">Report an Error</a></li>
+<li><a href="/report/copyright/">Report Copyright Violation</a></li>
+<li><a href="/are-you-faculty">For faculties</a></li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-3">
+<ul>
+<li><a href=/careers>Careers</a></li>
+<li><a href=/disclaimer>Disclaimer</a></li>
+<li><a href=/tou>Terms of Use</a></li>
+<li><a href=/privacy>Privacy Policy</a></li>
+<li><a href=/returns-and-cancellation>Returns and Cancellation</a></li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-3">
+<a href="https://play.google.com/store/apps/details?id=in.lecturenotes.lecturenotes" target="_blank">
+<img src="/assets/img/googleplay.png" class="img-responsive gPlay-btn" alt="Google play store">
+</a>
+<ul>
+<li>
+<ul id="follow_us">
+<li><a href="https://facebook.com/lecturenotes.in"><i class="icon-facebook"></i></a></li>
+ <li><a href="https://twitter.com/Lecturenotesin"><i class="icon-twitter"></i></a></li>
+<li><a href="https://plus.google.com/+LectureNotesIn"><i class=" icon-google"></i></a></li>
+</ul>
+</li>
+<li>
+<small>Questions? Let us know</small>
+</li>
+<li><strong class="phone">
+<a href="/cdn-cgi/l/email-protection#567075666f616d70756766666d707567666f6d70756766636d70756767666d70756660626d707567666e6d70756766676d7075666f6f6d70756767606d70756767616d70756767626d70756766676d70756767666d70756767676d70756767606d70756766676d70756767636d70756662606d70756766636d70756767666d">
+&#097;&#100;&#109;&#105;&#110;&#064;&#108;&#101;&#099;&#116;&#117;&#114;&#101;&#110;&#111;&#116;&#101;&#115;&#046;&#105;&#110;
+</a></strong><br></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="copy_right">© Copyright 2011- 2018. All Rights Reserved.</div>
+</footer>
+<div id="toTop"><i class="icon-up-open-3"></i></div>
+
+<div class="modal fade in" id="user-login-form" tabindex="-1" role="dialog" aria-hidden="true" style="padding-right: 15px;">
+<div class="modal-dialog">
+<div class="modal-content">
+<button type="button" class="close modal_close close_register" data-dismiss="modal">×</button>
+<button type="button" class="close modal_close close_login" data-dismiss="modal">×</button>
+<div class="modal-body">
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="ln-report-modal" role="dialog">
+<div class="modal-dialog modal-sm">
+
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Report</h4>
+</div>
+<div class="modal-body">
+</div>
+<div class="modal-footer">
+<a class="btn btn-danger" id="report-submit-btn">Submit Report</a>
+<a class="btn btn-primary" data-dismiss="modal">Cancel</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="confirm_modal" role="dialog">
+<div class="modal-dialog modal-sm">
+
+<div class="modal-content">
+<div class="modal-header">
+
+</div>
+<div class="modal-body">
+<h4>""</h4>
+<p></p>
+</div>
+<div class="modal-footer">
+<a class="btn btn-primary" id="confirm-cancel-btn" data-dismiss="modal">Cancel</a>
+<a class="btn btn-danger" id="confirm-yes-btn" data-dismiss="modal">Yes</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="general-modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-body">
+<i class="icon-spinner spin"></i>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="lopop-container"></div>
+
+<div class="online-users-container in" style="display: none">
+<strong class="online-users">0</strong>
+<span>Readers Online</span>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.ravenjs.com/3.17.0/raven.min.js" crossorigin="anonymous"></script>
+<script>
+        Raven.config( "", {
+            whitelistUrls: [ /https?:\/\/((cdn|www|static|dl(\d+)?)\.)?lecturenotes\.in/ ],
+            ignoreErrors: [ /nsresult.*NS_ERROR/ ]
+        }).install();
+//        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//            m=s.getElementsByTagName(o)
+//                [0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+//        ga('create', 'UA-27204737-2', 'auto');
+    </script>
+<script src="/js/b9d4ea5-4898d9f.js"></script>
+<script>
+        var csrfToken = ($('meta[name=csrf-token]').attr('content')) ? $('meta[name=csrf-token]').attr('content') : "" ;
+    </script>
+<script>
+        window.lecturenotes = {
+                    user: null || {},
+                user_logged_in : false
+        };
+        window.lecturenotes.user.avatar = "/uploads/avatars/default.png";
+
+
+                        if (lecturenotes.user && Raven) {
+            Raven.setUserContext(lecturenotes.user)
+        }
+        
+    </script>
+<script>
+        var onlineUsersContainer = $('.online-users-container');
+        var onlineUsers = $('.online-users');
+        $.getScript( "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js", function( data, textStatus, jqxhr ) {
+            var socket = io('https://online.lecturenotes.in');
+            socket.on('connect', function (data) {
+                getCurrentUserOnlineCount( renderCurrentUserOnlineCount, function () {
+                    onlineUsersContainer.fadeIn();
+                    setTimeout( function () {
+                        onlineUsersContainer.removeClass('in');
+                    },3000 );
+                } );
+            });
+            function getCurrentUserOnlineCount( render, show ) {
+                socket.emit('online::find', null, function ( err, data ) {
+                    render( err, data, show );
+                } );
+            }
+
+            var DEFAULT_DELAY = 5000;
+            var delay = DEFAULT_DELAY;
+
+            var timerId = setTimeout(function request() {
+                // get the current user online count
+                getCurrentUserOnlineCount( renderCurrentUserOnlineCount );
+
+            }, delay);
+
+            function renderCurrentUserOnlineCount( err, data, cb ) {
+                if (err) {
+                    delay += 2000;
+
+                    if (delay > 30000 /* 1 min */) {
+                        delay = 30000;
+                    }
+                } else {
+                    onlineUsers.text( data.usersOnlineCount );
+                    if ( cb ){
+                        cb();
+                    }
+                    // reset the delay to the default value
+                    // when no error
+                    delay = DEFAULT_DELAY;
+                }
+
+                timerId = setTimeout( function () {
+                    getCurrentUserOnlineCount( renderCurrentUserOnlineCount );
+                }, delay);
+            }
+            socket.on('broadcast created', function ( data ) {
+                lopop({
+                    'size' : 'md',
+                    'title' : '',
+                    'content' : '<div style="color: #333;">' + data.message.html + '</div>',
+                    'sticky' : false,
+                    'color' : 'primary',
+                    'autoRemove' : true,
+                    'duration' : 7000
+                });
+            });
+        });
+    </script>
+<script>
+        window.lecturenotes.content_id = window.content_id || '';
+        window.lecturenotes.content_type = window.content_type || '';
+    </script>
+
+<script>
+    var $buoop={vs:{i:10,f:-4,o:-4,s:7,c:-4},api:4,text:"Your browser (%s) is <b>out of date</b>.  <a%s>Update your browser</a> for more security, comfort and the best experience on LectureNotes.in."};!function(){function e(){var e=document.createElement("script");e.async=!0,e.src="//browser-update.org/update.min.js",document.body.appendChild(e)}try{document.addEventListener("DOMContentLoaded",e,!1)}catch(t){window.attachEvent("onload",e)}}();
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"01c39fee1c","applicationID":"86394664","transactionName":"bl0ANhdXCBFSVUFYXlcXIwERXwkMHFpaVlhX","queueTime":0,"applicationTime":27,"atts":"QhoDQF9NGx8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
